@@ -1,3 +1,9 @@
+let dooku = $('Count-Dooku');
+let maul = $('Darth-Maul');
+let grievous = $('General-Grievous');
+let vader = $('Darth-Vader');
+let theEmporer = $('Palpatine');
+
 var background = {
 
 };
@@ -27,7 +33,32 @@ var maceWindu = {
 };
 
 var darthMaul = {
-    baseHP: 10
-    counterAttack: 1
-    currentHP:
+    baseHP: 10,
+    counterAttack: 1,
+    currentHP: 10
+};
+
+var countDooku = {
+    baseHP: 30,
+    counterAttack: 2,
+    currentHP: 20
 }
+
+var generalGrievous = {
+    baseHP: 60,
+    counterAttack: 4,
+    currentHP: 20
+}
+
+var darthVader = {
+    baseHP: 150,
+    counterAttack: 3,
+    currentHP: 50
+}
+
+var palpatine = {
+    baseHP: 100,
+    counterAttack: 6,
+    currentHP: 30
+}
+
