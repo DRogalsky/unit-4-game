@@ -3,9 +3,27 @@ let maul = $('Darth-Maul');
 let grievous = $('General-Grievous');
 let vader = $('Darth-Vader');
 let theEmporer = $('Palpatine');
+let secura = $('Aayla-Secura');
+let windu = $('Mace-Windu');
+let jediYoda = $('Yoda');
 
 var background = {
-
+    hero: "",
+    villian: "",
+    fight() {
+        villian.currentHP -= hero.currentAttack;
+        hero.currentHP -= villian.counterAttack;
+        hero.currentAttack += hero.baseAttack;
+    },
+    fightWin() {
+        villian.currentHP = villian.baseHP
+        //TODO:hide the villian and make the enemies list reapear?
+    },
+    reset() {
+        hero.currentAttack = hero.baseAttack;
+        hero.currentHP = hero.baseHP;
+        //TODO:reset everything and make the character select reapear
+    }
 };
 
 var aaylaSecura = {
