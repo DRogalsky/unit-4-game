@@ -10,21 +10,25 @@
 </head>
 <body>
     <h1>Starwars Game</h1>
-    <h2 id='characterChoice'>Choose your fighter:</h2>
-    <ul id='heroes'>
-        <li><img src="" alt="AAyla Secura" id="Aayla-Secura" class = 'hero' value='aaylaSecura'></li>
-        <li><img src="" alt="Mace Windu" id="Mace-Windu" class = 'hero' value='maceWindu'></li>
-        <li><img src="" alt="Yoda" id="Yoda" class='hero' value='yoda'></li>
-    </ul>
-    <h2>Fight the Enemy:</h2>
-    <ul>
-        <li><img src="" alt="Darth Maul" id='Darth-Maul' class='villians' value='darthMaul'></li>
-        <li><img src="" alt="General Grievous" id='General-Grievous' class='villians' value='generalGrievous'></li>
-        <li><img src="" alt="Count Dooku" id='Count-Dooku' class='villians' value='countDooku'></li>
-        <li><img src="" alt="Darth Vader" id='Darth-Vader' class='villians' value='darthVader'></li>
-        <li><img src="" alt="Palpatine" id='Palpatine' class='villians' value='palpatine'></li>
-    </ul>
-    
+    <div id="heroesContainer">
+        <h2 id='characterChoice'>Choose your fighter:</h2>
+        <ul id='heroes'>
+            <li><img src="assets/images/aaylaSecura.jpeg" alt="AAyla Secura" id="Aayla-Secura" class = 'hero' value='aaylaSecura'></li>
+            <li><img src="assets/images/maceWindu.jpg" alt="Mace Windu" id="Mace-Windu" class = 'hero' value='maceWindu'></li>
+            <li><img src="assets/images/yoda.jpg" alt="Yoda" id="Yoda" class='hero' value='yoda'></li>
+        </ul>
+    </div>
+    <div id='villianContainer'>
+        <h2 id='enemySelect'>Fight the Enemy:</h2>
+        <ul id='villians'>
+            <li><img src="assets/images/darthMaul.jpg" alt="Darth Maul" id='Darth-Maul' class='villian' value='darthMaul'></li>
+            <li><img src="assets/images/generalGrievous.jpg" alt="General Grievous" id='General-Grievous' class='villian' value='generalGrievous'></li>
+            <li><img src="assets/images/countDooku.jpeg" alt="Count Dooku" id='Count-Dooku' class='villian' value='countDooku'></li>
+            <li><img src="assets/images/vader.jpg" alt="Darth Vader" id='Darth-Vader' class='villian' value='darthVader'></li>
+            <li><img src="assets/images/palpatine.jpg" alt="Palpatine" id='Palpatine' class='villian' value='palpatine'></li>
+        </ul>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src='assets/javascript/scripts.js'></script>
 </body>
