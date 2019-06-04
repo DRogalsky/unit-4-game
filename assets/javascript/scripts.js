@@ -1,21 +1,26 @@
-let dooku = $('Count-Dooku');
-let maul = $('Darth-Maul');
-let grievous = $('General-Grievous');
-let vader = $('Darth-Vader');
-let theEmporer = $('Palpatine');
-let secura = $('Aayla-Secura');
-let windu = $('Mace-Windu');
-let jediYoda = $('Yoda');
+let dooku = $('#Count-Dooku');
+let maul = $('#Darth-Maul');
+let grievous = $('#General-Grievous');
+let vader = $('#Darth-Vader');
+let theEmporer = $('#Palpatine');
+let secura = $('#Aayla-Secura');
+let windu = $('#Mace-Windu');
+let jediYoda = $('#Yoda');
+let shownHero = $('#shownHero')
 
 var background = {
     hero: "",
     villian: "",
     characterSelect(chosenHero) {
-        this.hero = chosenHero;
+        for(let i = 0; i < heroArray.length; i++) {
+            if(heroArray[i].value === chosenHero) {
+                this.hero = heroArray[i];
+            }
+        } 
     },
     enemySelect(chosenTarget) {
         this.villian = chosenTarget;
-    }
+    },
     fight() {
         villian.currentHP -= hero.currentAttack;
         hero.currentHP -= villian.counterAttack;
@@ -60,7 +65,7 @@ var heroArray = [
     }
 ];
 
-var villianArray[
+var villianArray = [
     darthMaul = {
         value: 'darthMaul',
         baseHP: 10,
@@ -99,5 +104,13 @@ var villianArray[
 
 
 $(document).ready(function() {
-    
-}
+
+    $('.hero').on('click', function() {
+        if (background.hero === "") {
+            background.characterSelect($(this).attr('value'));
+            shownHero.append(this);
+            $('#heroesContainer').attr('visibility', 'hidden');
+        }
+    })
+
+});
