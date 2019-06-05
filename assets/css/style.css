@@ -18,10 +18,12 @@ img {
 .villian img {
     width: 20em;
     height: 10em;
-    float: left;
     margin: 20px;
 }
 
+#villians li {
+    display:inline-block;
+}
 
 
 #shownhero {

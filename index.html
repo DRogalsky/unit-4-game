@@ -18,19 +18,68 @@
             <li><img src="assets/images/yoda.jpg" alt="Yoda" id="Yoda" class='hero' value='yoda'></li>
         </ul>
     </div>
-    <div id='shownHero'></div>
+    <div id='shownHero'>
+        <ul>
+            <li>Health: <span id="health"></span></li>
+            <li>Attack: <span id="attack"></span></li>
+        </ul>
+    </div>
     <button id='fightButton'>Fight!</button>
     <div id='villianContainer'>
         <h2 id='enemySelect'>Fight the Enemy:</h2>
         <ul id='villians'>
-            <li><img src="assets/images/darthMaul.jpg" alt="Darth Maul" id='Darth-Maul' class='villian' value='darthMaul'></li>
-            <li><img src="assets/images/generalGrievous.jpg" alt="General Grievous" id='General-Grievous' class='villian' value='generalGrievous'></li>
-            <li><img src="assets/images/countDooku.jpeg" alt="Count Dooku" id='Count-Dooku' class='villian' value='countDooku'></li>
-            <li><img src="assets/images/vader.jpg" alt="Darth Vader" id='Darth-Vader' class='villian' value='darthVader'></li>
-            <li><img src="assets/images/palpatine.jpg" alt="Palpatine" id='Palpatine' class='villian' value='palpatine'></li>
+            <li>
+                <div class='villian' value='darthMaul'>
+                    <img src="assets/images/darthMaul.jpg" alt="Darth Maul" id='Darth-Maul' >
+                    <ul>
+                        <li>Health: <span class="badHealth">10</span></li>
+                        <li>Attack: <span class="badAttack">1</span></li> 
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class='villian' value='generalGrievous'>
+                    <img src="assets/images/generalGrievous.jpg" alt="General Grievous" id='General-Grievous' >
+                    <ul>
+                        <li>Health: <span class="badHealth">60</span></li>
+                        <li>Attack: <span class="badAttack">3</span></li> 
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class='villian' value='countDooku'>
+                    <img src="assets/images/countDooku.jpeg" alt="Count Dooku" id='Count-Dooku' >
+                    <ul>
+                        <li>Health: <span class="badHealth">30</span></li>
+                        <li>Attack: <span class="badAttack">2</span></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class='villian' value='darthVader'>
+                    <img src="assets/images/vader.jpg" alt="Darth Vader" id='Darth-Vader' >
+                    <ul>
+                        <li>Health: <span class="badHealth">120</span></li>
+                        <li>Attack: <span class="badAttack">4</span></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class='villian' value='palpatine'>
+                    <img src="assets/images/palpatine.jpg" alt="Palpatine" id='Palpatine' >
+                    <ul>
+                        <li>Health: <span class="badHealth">6</span></li>
+                        <li>Attack: <span class="badAttack">100</span></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </div>
-    <div id="shownVillian"></div>
+    <div id="shownVillian">
+        <ul>
+
+        </ul>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src='assets/javascript/scripts.js'></script>

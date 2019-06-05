@@ -11,15 +11,23 @@ let villianContainer = $('#villianContainer');
 let heroesContainer = $('#heroesContainer');
 
 var background = {
+
     hero: "",
+
     villian: "",
+
+    wins: 0,
+
     characterSelect(chosenHero) {
         for(let i = 0; i < heroArray.length; i++) {
             if(heroArray[i].value === chosenHero) {
                 this.hero = heroArray[i];
+                $('#health').text(this.hero.currentHP);
+                $('#attack').text(this.hero.currentAttack);
             }
         } 
     },
+
     enemySelect(chosenTarget) {
         for(let i = 0; i < villianArray.length; i++) {
             if(villianArray[i].value === chosenTarget) {
@@ -27,42 +35,56 @@ var background = {
             }
         }
     },
+
     fight() {
         this.villian.currentHP -= this.hero.currentAttack;
         this.hero.currentHP -= this.villian.counterAttack;
         this.hero.currentAttack += this.hero.baseAttack;
         console.log(this.villian.currentHP, this.hero.currentHP);
+        this.display();
         if(this.villian.currentHP <= 0) {
             this.fightWin();
         }
     },
+
     fightWin() {
         let villianValue = this.villian.value;
-        this.villian = ""
+        $('div[value="'+villianValue+'"]').css('display', 'none');
+        villianContainer.css('display', 'inline-block');
+        this.wins++;
+        console.log(this.wins);
+        this.villian = "";
         //TODO:hide the villian and make the enemies list reapear?
     },
+
     reset() {
         this.hero.currentAttack = hero.baseAttack;
         this.hero.currentHP = hero.baseHP;
         //TODO:reset everything and make the character select reapear
+    },
+
+    display() {
+        $('#health').text(this.hero.currentHP);
+        $('#attack').text(this.hero.currentAttack);
     }
+
 };
 var heroArray = [
     aaylaSecura = {
         value: 'aaylaSecura',
         baseHP: 50,
-        baseAttack: 5,
-        currentHP: 30,
-        currentAttack: 5
+        baseAttack: 6,
+        currentHP: 50,
+        currentAttack: 6
         // 5,10,15,20,25,30,35,40,45,50
     },
 
     yoda = {
         value: 'yoda',
-        baseHP: 30,
-        baseAttack: 6,
-        currentHP: 30,
-        currentAttack: 6
+        baseHP: 40,
+        baseAttack: 8,
+        currentHP: 40,
+        currentAttack: 8
         // 6,12,18,24,30,36,42,48,54,60
     },
 
@@ -88,28 +110,28 @@ var villianArray = [
         value: 'countDooku',
         baseHP: 30,
         counterAttack: 2,
-        currentHP: 20
+        currentHP: 30
     },
 
     generalGrievous = {
         value: 'generalGrievous',
         baseHP: 60,
-        counterAttack: 4,
-        currentHP: 20
+        counterAttack: 3,
+        currentHP: 60
     },
 
     darthVader = {
         value: 'darthVader',
-        baseHP: 150,
-        counterAttack: 3,
-        currentHP: 50
+        baseHP: 120,
+        counterAttack: 4,
+        currentHP: 120
     },
 
     palpatine = {
         value: 'palpatine',
         baseHP: 100,
         counterAttack: 6,
-        currentHP: 30
+        currentHP: 100
     }
 ]
 
