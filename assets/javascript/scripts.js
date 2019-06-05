@@ -54,18 +54,21 @@ var background = {
         this.wins++;
         console.log(this.wins);
         this.villian = "";
-        //TODO:hide the villian and make the enemies list reapear?
+        if (this.wins === 5) {
+            alert('you win!')
+        }
     },
 
     reset() {
-        this.hero.currentAttack = hero.baseAttack;
-        this.hero.currentHP = hero.baseHP;
+        this.hero = ""
         //TODO:reset everything and make the character select reapear
     },
 
     display() {
+        let villianValue = this.villian.value;
         $('#health').text(this.hero.currentHP);
         $('#attack').text(this.hero.currentAttack);
+        $(`div[value="`+villianValue+`"] .badHealth`).text(this.villian.currentHP);
     }
 
 };
