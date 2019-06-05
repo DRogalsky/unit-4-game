@@ -1,5 +1,5 @@
 #villianContainer {
-    visibility: hidden;
+    display: none;
 }
 
 #heroes img {
@@ -9,9 +9,21 @@
     margin: 20px;
 }
 
-#villians img {
+img {
+    width: 20em;
+    height:10em;
+    margin: 20px;
+}
+
+.villian img {
     width: 20em;
     height: 10em;
     float: left;
     margin: 20px;
+}
+
+
+
+#shownhero {
+    clear: both;
 }

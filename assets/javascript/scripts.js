@@ -6,7 +6,9 @@ let theEmporer = $('#Palpatine');
 let secura = $('#Aayla-Secura');
 let windu = $('#Mace-Windu');
 let jediYoda = $('#Yoda');
-let shownHero = $('#shownHero')
+let shownHero = $('#shownHero');
+let villianContainer = $('#villianContainer');
+let heroesContainer = $('#heroesContainer');
 
 var background = {
     hero: "",
@@ -19,20 +21,29 @@ var background = {
         } 
     },
     enemySelect(chosenTarget) {
-        this.villian = chosenTarget;
+        for(let i = 0; i < villianArray.length; i++) {
+            if(villianArray[i].value === chosenTarget) {
+                this.villian = villianArray[i];
+            }
+        }
     },
     fight() {
-        villian.currentHP -= hero.currentAttack;
-        hero.currentHP -= villian.counterAttack;
-        hero.currentAttack += hero.baseAttack;
+        this.villian.currentHP -= this.hero.currentAttack;
+        this.hero.currentHP -= this.villian.counterAttack;
+        this.hero.currentAttack += this.hero.baseAttack;
+        console.log(this.villian.currentHP, this.hero.currentHP);
+        if(this.villian.currentHP <= 0) {
+            this.fightWin();
+        }
     },
     fightWin() {
-        villian.currentHP = villian.baseHP
+        let villianValue = this.villian.value;
+        this.villian = ""
         //TODO:hide the villian and make the enemies list reapear?
     },
     reset() {
-        hero.currentAttack = hero.baseAttack;
-        hero.currentHP = hero.baseHP;
+        this.hero.currentAttack = hero.baseAttack;
+        this.hero.currentHP = hero.baseHP;
         //TODO:reset everything and make the character select reapear
     }
 };
@@ -109,8 +120,23 @@ $(document).ready(function() {
         if (background.hero === "") {
             background.characterSelect($(this).attr('value'));
             shownHero.append(this);
-            $('#heroesContainer').attr('visibility', 'hidden');
+            heroesContainer.css('display', 'none');
+            villianContainer.css('display', 'inline-block');
         }
     })
+
+    $('.villian').on('click', function() {
+        if (background.villian === "") {
+            background.enemySelect($(this).attr('value'));
+            shownVillian.append(this);
+            villianContainer.css('display', 'none')
+        }
+    })
+
+    $('#fightButton').on('click', function() {
+        if (background.hero !== "" || background.villian !== "") {
+            background.fight();
+        }
+    });
 
 });
