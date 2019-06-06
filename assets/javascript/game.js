@@ -90,6 +90,7 @@ var background = {
         }
         this.hero = "";
         this.villian = '';
+        this.wins = 0;
         //TODO:reset everything and make the character select reapear
         for(villian in villianArray) {
             villianArray[villian].currentHP = villianArray[villian].baseHP;
