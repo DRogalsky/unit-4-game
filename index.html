@@ -13,9 +13,15 @@
     <div id="heroesContainer">
         <h2 id='characterChoice'>Choose your fighter:</h2>
         <ul id='heroes'>
-            <li><img src="assets/images/aaylaSecura.jpeg" alt="AAyla Secura" id="Aayla-Secura" class = 'hero' value='aaylaSecura'></li>
-            <li><img src="assets/images/maceWindu.jpg" alt="Mace Windu" id="Mace-Windu" class = 'hero' value='maceWindu'></li>
-            <li><img src="assets/images/yoda.jpg" alt="Yoda" id="Yoda" class='hero' value='yoda'></li>
+            <li id='aaylaHome'>
+                <img src="assets/images/aaylaSecura.jpeg" alt="AAyla Secura" id="Aayla-Secura" class = 'hero' value='aaylaSecura'>
+            </li>
+            <li id='maceHome'>
+                <img src="assets/images/maceWindu.jpg" alt="Mace Windu" id="Mace-Windu" class = 'hero' value='maceWindu'>
+            </li>
+            <li id='yodaHome'>
+                <img src="assets/images/yoda.jpg" alt="Yoda" id="Yoda" class='hero' value='yoda'>
+            </li>
         </ul>
     </div>
     <div id='shownHero'>
@@ -25,6 +31,7 @@
         </ul>
     </div>
     <button id='fightButton'>Fight!</button>
+    <br>
     <div id='villianContainer'>
         <h2 id='enemySelect'>Fight the Enemy:</h2>
         <ul id='villians'>
@@ -76,10 +83,8 @@
         </ul>
     </div>
     <div id="shownVillian">
-        <ul>
-
-        </ul>
     </div>
+    <div id="hidden"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src='assets/javascript/scripts.js'></script>

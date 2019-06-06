@@ -9,6 +9,8 @@ let jediYoda = $('#Yoda');
 let shownHero = $('#shownHero');
 let villianContainer = $('#villianContainer');
 let heroesContainer = $('#heroesContainer');
+let shownVillian = $('#shownVillian');
+
 
 var background = {
 
@@ -37,31 +39,66 @@ var background = {
     },
 
     fight() {
-        this.villian.currentHP -= this.hero.currentAttack;
-        this.hero.currentHP -= this.villian.counterAttack;
-        this.hero.currentAttack += this.hero.baseAttack;
-        console.log(this.villian.currentHP, this.hero.currentHP);
-        this.display();
-        if(this.villian.currentHP <= 0) {
-            this.fightWin();
-        }
+        if (this.villian !== "") {
+            this.villian.currentHP -= this.hero.currentAttack;
+            this.hero.currentHP -= this.villian.counterAttack;
+            this.hero.currentAttack += this.hero.baseAttack;
+            this.display();
+            if(this.villian.currentHP <= 0) {
+                this.fightWin();
+            }
+            if(this.hero.currentHP <= 0) {
+                alert('you lose...');
+                this.reset();
+            }
+        };
     },
 
     fightWin() {
         let villianValue = this.villian.value;
-        $('div[value="'+villianValue+'"]').css('display', 'none');
+        $('#hidden').append($('div[value="'+villianValue+'"]'));
         villianContainer.css('display', 'inline-block');
         this.wins++;
-        console.log(this.wins);
+        $(`div[value="`+villianValue+`"] .badHealth`).text(this.villian.baseHP);
         this.villian = "";
         if (this.wins === 5) {
-            alert('you win!')
+            alert('you win!');
+            this.reset();
         }
     },
 
     reset() {
-        this.hero = ""
+        
+        $('#villians').empty();
+
+        $('#hidden').children().each(function() {
+            let listItem = $('<li></li>');
+        
+            listItem.append(this);
+            $('#villians').append(listItem)
+        })
+        villianContainer.css('display', 'none');
+
+        if(this.hero.value === 'aaylaSecura') {
+            $('#aaylaHome').append(secura);
+        } 
+        else if(this.hero.value === 'maceWindu') {
+            $('#maceHome').append(windu);
+        } 
+        else {
+            $('#yodaHome').append(jediYoda);
+        }
+        this.hero = "";
+        this.villian = '';
         //TODO:reset everything and make the character select reapear
+        for(villian in villianArray) {
+            villianArray[villian].currentHP = villianArray[villian].baseHP;
+        }
+        for(jedi in heroArray) {
+            heroArray[jedi].currentHP = heroArray[jedi].baseHP;
+            heroArray[jedi].currentAttack = heroArray[jedi].baseAttack;
+        }
+        heroesContainer.css('display', 'inline-block');
     },
 
     display() {

@@ -5,8 +5,11 @@
 #heroes img {
     width: 20em;
     height: 10em;
-    float: left;
     margin: 20px;
+}
+
+#heroes li {
+    display: inline-block;
 }
 
 img {
@@ -28,4 +31,8 @@ img {
 
 #shownhero {
     clear: both;
+}
+
+#hidden {
+    display: none;
 }
